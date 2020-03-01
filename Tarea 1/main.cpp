@@ -6,45 +6,57 @@
 
 
 #include "Grafo.h"
+#include<stdio.h>
 
 
 int main(){
+    
+    
     Grafo  grafo;
 
     grafo.agregarVertice();
     grafo.agregarVertice();
     grafo.agregarVertice();
     grafo.agregarVertice();
+    grafo.agregarVertice();
     
-    grafo.agregarArista(0,3,10);
+    grafo.agregarArista(0,0,0);
+    grafo.agregarArista(0,1,1);
+    grafo.agregarArista(0,2,0);
+    grafo.agregarArista(0,3,3);
+    grafo.agregarArista(0,4,7);
     
+    grafo.agregarArista(1,0,1);
+    grafo.agregarArista(1,1,0);
+    grafo.agregarArista(1,2,5);
+    grafo.agregarArista(1,3,0);
+    grafo.agregarArista(1,4,0);
     
-    //grafo.vertices.imprimir();
+    grafo.agregarArista(2,0,0);
+    grafo.agregarArista(2,1,5);
+    grafo.agregarArista(2,2,0);
+    grafo.agregarArista(2,3,2);
+    grafo.agregarArista(2,4,1);
     
-    grafo.imprimirGrafo();
+    grafo.agregarArista(3,0,3);
+    grafo.agregarArista(3,1,0);
+    grafo.agregarArista(3,2,2);
+    grafo.agregarArista(3,3,0);
+    grafo.agregarArista(3,4,6);
     
-    
-    
-     /*
-    linked_list a;
-    a.add_node();
-    a.add_node();
-    a.add_node();
-    a.add_node();
-    a.add_node();
-    a.imprimir();
-    cout << endl<< a.getSize();
-     */
-     
-    
-    
-    return 0;
-     
+    grafo.agregarArista(4,0,7);
+    grafo.agregarArista(4,1,0);
+    grafo.agregarArista(4,2,1);
+    grafo.agregarArista(4,3,6);
+    grafo.agregarArista(4,4,0);
     
 
-   
+    grafo.imprimirGrafo();
     
+    cout << endl << endl;
     
+    grafo.dijkstra(2);
     
-    
-}
+ }
+
+ 

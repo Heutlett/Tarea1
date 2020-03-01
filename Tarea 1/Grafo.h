@@ -35,6 +35,9 @@ public:
     
     void imprimirGrafo();
     
+    void dijkstra(int);
+    
+    
     
 
 private:
