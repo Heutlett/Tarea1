@@ -20,6 +20,7 @@
       <itemPath>Vertice.cpp</itemPath>
       <itemPath>linked_list.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>server.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -59,6 +60,8 @@
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="server.c" ex="false" tool="0" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -95,6 +98,8 @@
       <item path="linked_list.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="server.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
   </confs>

@@ -19,11 +19,11 @@ using namespace std;
 /*
  * 
  */
-int main(int argc, char** argv) {
+//int main(int argc, char** argv) {
     
-    cargarGrafoTXT("texto.txt");
+    //cargarGrafoTXT("texto.txt");
     
 
-    return 0;
-}
+    //return 0;
+//}
 
