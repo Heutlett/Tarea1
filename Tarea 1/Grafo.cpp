@@ -48,7 +48,7 @@ void Grafo::agregarVertice(){
         
         while(vertices.getVertice(i)->cantAristas < vertices.getSize()){
             
-            vertices.getVertice(i)->aristas.push_back(9999);
+            vertices.getVertice(i)->aristas.push_back(0);
             vertices.getVertice(i)->cantAristas++;
             
         }

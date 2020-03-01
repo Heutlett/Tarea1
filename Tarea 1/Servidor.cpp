@@ -4,15 +4,8 @@
  * and open the template in the editor.
  */
 
-#include <stdio.h>
+#include "Servidor.h"
 
-int main(){
-    
-    
-    //cargarGrafoTXT("texto.txt");
-    
-    
-    
+Servidor::Servidor(){
+
 }
-
- 

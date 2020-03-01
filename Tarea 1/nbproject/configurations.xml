@@ -4,7 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Cliente.h</itemPath>
       <itemPath>Grafo.h</itemPath>
+      <itemPath>Servidor.h</itemPath>
       <itemPath>Vertice.h</itemPath>
       <itemPath>linked_list.h</itemPath>
     </logicalFolder>
@@ -16,6 +18,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Grafo.cpp</itemPath>
+      <itemPath>Servidor.cpp</itemPath>
       <itemPath>Vertice.cpp</itemPath>
       <itemPath>linked_list.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -42,9 +45,15 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Cliente.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Grafo.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Grafo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Servidor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Servidor.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Vertice.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -77,9 +86,15 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Cliente.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Grafo.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Grafo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Servidor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Servidor.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Vertice.cpp" ex="false" tool="1" flavor2="0">
       </item>
