@@ -30,47 +30,16 @@ class linked_list
 private:
     node *head,*tail;
 public:
-    linked_list()
-    {
-        head = NULL;
-        tail = NULL;
-    }
+    linked_list();
 
-    void add_node(int n)
-    {
-        node *tmp = new node;
-        tmp->data = new Vertice(n);
-        tmp->next = NULL;
+    void add_node(int n);
 
-        if(head == NULL)
-        {
-            head = tmp;
-            tail = tmp;
-        }
-        else
-        {
-            tail->next = tmp;
-            tail = tail->next;
-        }
-    }
+    node* gethead();
 
-    node* gethead()
-    {
-        return head;
-    }
-
-    static void display(node *head)
-    {
-        if(head == NULL)
-        {
-            cout << "NULL" << endl;
-        }
-        else
-        {
-            cout << head->data->numero << endl;
-            display(head->next);
-        }
-    }
+    void imprimir();
+    
+    int getSize();
+    
 
 
 };

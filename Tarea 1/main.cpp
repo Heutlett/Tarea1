@@ -17,10 +17,13 @@ int main(){
     linked_list a;
     a.add_node(1);
     a.add_node(2);
-    linked_list::display(a.gethead());
+    a.add_node(3);
+    a.add_node(4);
+    a.add_node(5);
+    a.imprimir();
+    cout << endl<< a.getSize();
     return 0;
-    
-    return 0;
+   
     
     
 }

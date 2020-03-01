@@ -17,6 +17,7 @@
                    projectFiles="true">
       <itemPath>Grafo.cpp</itemPath>
       <itemPath>Vertice.cpp</itemPath>
+      <itemPath>linked_list.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -48,6 +49,8 @@
       <item path="Vertice.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Vertice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="linked_list.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="linked_list.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -81,6 +84,8 @@
       <item path="Vertice.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Vertice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="linked_list.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="linked_list.h" ex="false" tool="3" flavor2="0">
       </item>
