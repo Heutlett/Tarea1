@@ -15,12 +15,13 @@
 #define LINKED_LIST_H
 
 #include <iostream>
+#include "Vertice.h"
 
 using namespace std;
 
 struct node
 {
-    int data;
+    Vertice * data;
     node *next;
 };
 
@@ -38,7 +39,7 @@ public:
     void add_node(int n)
     {
         node *tmp = new node;
-        tmp->data = n;
+        tmp->data = new Vertice(n);
         tmp->next = NULL;
 
         if(head == NULL)
@@ -66,41 +67,12 @@ public:
         }
         else
         {
-            cout << head->data << endl;
+            cout << head->data->numero << endl;
             display(head->next);
         }
     }
 
-    static void concatenate(node *a,node *b)
-    {
-        if( a != NULL && b!= NULL )
-        {
-            if (a->next == NULL)
-                a->next = b;
-            else
-                concatenate(a->next,b);
-        }
-        else
-        {
-            cout << "Either a or b is NULL\n";
-        }
-    }
 
-    void front(int n)
-    {
-        node *tmp = new node;
-        tmp -> data = n;
-        tmp -> next = head;
-        head = tmp;
-    }
-
-    void after(node *a, int value)
-    {
-        node* p = new node;
-        p->data = value;
-        p->next = a->next;
-        a->next = p;
-    }
 };
 
 

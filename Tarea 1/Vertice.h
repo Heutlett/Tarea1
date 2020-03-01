@@ -14,7 +14,7 @@
 #ifndef VERTICE_H
 #define VERTICE_H
 
-class Vertice {
+struct Vertice {
 public:
     
     Vertice(int);
