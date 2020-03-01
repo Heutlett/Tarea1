@@ -4,15 +4,26 @@
  * and open the template in the editor.
  */
 
-#include <stdio.h>
+/* 
+ * File:   main.cpp
+ * Author: heutlett
+ *
+ * Created on March 1, 2020, 3:17 PM
+ */
 
-int main(){
+#include <cstdlib>
+#include "Cliente.h"
+
+using namespace std;
+
+/*
+ * 
+ */
+int main(int argc, char** argv) {
     
+    cargarGrafoTXT("texto.txt");
     
-    //cargarGrafoTXT("texto.txt");
-    
-    
-    
+
+    return 0;
 }
 
- 

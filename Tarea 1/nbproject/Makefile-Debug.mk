@@ -36,7 +36,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Grafo.o \
-	${OBJECTDIR}/Servidor.o \
 	${OBJECTDIR}/Vertice.o \
 	${OBJECTDIR}/linked_list.o \
 	${OBJECTDIR}/main.o
@@ -70,11 +69,6 @@ ${OBJECTDIR}/Grafo.o: Grafo.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Grafo.o Grafo.cpp
-
-${OBJECTDIR}/Servidor.o: Servidor.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Servidor.o Servidor.cpp
 
 ${OBJECTDIR}/Vertice.o: Vertice.cpp
 	${MKDIR} -p ${OBJECTDIR}
