@@ -11,10 +11,10 @@ linked_list::linked_list()
         tail = NULL;
     }
 
-void linked_list::add_node(int n)
+void linked_list::add_node()
 {
     node *tmp = new node;
-    tmp->data = new Vertice(n);
+    tmp->data = new Vertice(this->getSize());
     tmp->next = NULL;
 
     if(head == NULL)
@@ -47,6 +47,22 @@ void linked_list:: imprimir()
     
 }
 
+Vertice * linked_list::getVertice(int n){
+    
+    node * tmp = head;
+    
+    while(tmp != NULL){
+        
+        if(tmp->data->numero == n){
+            
+            return tmp->data;
+            
+        }
+        tmp = tmp->next;
+        
+    }
+    
+}
 
 int linked_list::getSize(){
     
@@ -63,3 +79,4 @@ int linked_list::getSize(){
     return n;
     
 }
+

@@ -5,25 +5,46 @@
  */
 
 
-#include "linked_list.h"
+#include "Grafo.h"
 
 
 int main(){
-    //Grafo * grafo;
+    Grafo  grafo;
+
+    grafo.agregarVertice();
+    grafo.agregarVertice();
+    grafo.agregarVertice();
+    grafo.agregarVertice();
     
-    //Vertice * v = new Vertice(1);
-    //cout << v->numero;
+    grafo.agregarArista(0,3,10);
     
+    
+    //grafo.vertices.imprimir();
+    
+    grafo.imprimirGrafo();
+    
+    
+    
+     /*
     linked_list a;
-    a.add_node(1);
-    a.add_node(2);
-    a.add_node(3);
-    a.add_node(4);
-    a.add_node(5);
+    a.add_node();
+    a.add_node();
+    a.add_node();
+    a.add_node();
+    a.add_node();
     a.imprimir();
     cout << endl<< a.getSize();
+     */
+     
+    
+    
     return 0;
+     
+    
+
    
+    
+    
     
     
 }

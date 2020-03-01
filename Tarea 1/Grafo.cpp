@@ -12,27 +12,53 @@
  */
 
 #include "Grafo.h"
-#include "Vertice.h"
+
 
 Grafo::Grafo() {
     
-    //cantVertices = 0;
+    
+}
+
+void Grafo::imprimirGrafo(){
+    
+    node * tmp = vertices.gethead();
+    
+    while(tmp != NULL){
+        
+        tmp->data->imprimirAristas();
+        tmp = tmp->next;
+        
+    }
+    
+    
+}
+
+void Grafo::agregarVerticeSolo(){
+    
+    vertices.add_node();
 }
 
 void Grafo::agregarVertice(){
     
-    Vertice v(1);
+    vertices.add_node();
     
-    vertices.push_back(v);
+    for(int i = 0; i < vertices.getSize(); i++){
+        
+        while(vertices.getVertice(i)->cantAristas < vertices.getSize()){
+            
+            vertices.getVertice(i)->aristas.push_back(9999);
+            vertices.getVertice(i)->cantAristas++;
+            
+        }
+        
+    }
+}
+
+void Grafo::agregarArista(int verticeIni, int verticeFin, int peso){
+    
+    Vertice * tmp = this->vertices.getVertice(verticeIni);
+    
+    tmp->aristas.at(verticeFin) = peso;
     
 }
 
-void Grafo::imprimirVertices(){
-    
-    //for(int i = 0; i < cantVertices; i++){
-        
-        //cout << vertices.at(i).getNumero();
-        
-    //}
-    
-}

@@ -32,7 +32,7 @@ private:
 public:
     linked_list();
 
-    void add_node(int n);
+    void add_node();
 
     node* gethead();
 
@@ -40,7 +40,7 @@ public:
     
     int getSize();
     
-
+    Vertice * getVertice(int);
 
 };
 

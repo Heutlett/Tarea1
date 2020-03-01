@@ -14,24 +14,27 @@
 #ifndef GRAFO_H
 #define GRAFO_H
 
-#include <vector>
 #include <iostream>
-#include "Vertice.h"
+#include "linked_list.h"
 
 using namespace std;
 
 class Grafo {
     
-    static int cantVertices;
-    
 public:
     
     Grafo();
     
-    vector<Vertice> vertices;
+    linked_list vertices;
     
     void agregarVertice();
-    void imprimirVertices();
+    
+    void agregarVerticeSolo();
+    
+    void agregarArista(int, int, int);
+    
+    void imprimirGrafo();
+    
     
 
 private:

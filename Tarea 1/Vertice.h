@@ -14,16 +14,26 @@
 #ifndef VERTICE_H
 #define VERTICE_H
 
-struct Vertice {
-public:
-    
-    Vertice(int);
-    
-    int numero;
-    
-    int getNumero();
+#include <vector>
+#include <iostream>
 
-private:
+using namespace std;
+
+struct Vertice {
+    
+    public:
+
+        Vertice(int);
+        
+        int numero;
+        
+        int cantAristas = 0;
+        
+        vector<int> aristas;
+        
+        void imprimirAristas();
+
+    private:
 
 };
 

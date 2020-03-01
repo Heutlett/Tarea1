@@ -16,13 +16,21 @@
 Vertice::Vertice(int n) {
     
     numero = n;
+    
+    
 }
 
-int Vertice::getNumero(){
+void Vertice::imprimirAristas(){
     
-    return numero;
-    
+    for(int i = 0; i < this->cantAristas; i++){
+        
+        cout << aristas.at(i) << " ";
+        
+    }
+    cout << endl;
 }
+
+
 
 
 
