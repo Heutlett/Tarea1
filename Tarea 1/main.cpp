@@ -5,12 +5,20 @@
  */
 
 #include "Grafo.h"
+#include "linked_list.h"
+
 
 int main(){
-    
     Grafo * grafo;
-     
-    grafo->agregarVertice();
+    
+    linked_list a;
+    a.add_node(1);
+    a.add_node(2);
+    a.front(3);
+    linked_list::display(a.gethead());
+    return 0;
+    
+    return 0;
     
     
 }
