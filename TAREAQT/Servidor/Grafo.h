@@ -36,7 +36,7 @@ public:
 
     void agregarArista(int, int, int);
 
-    void imprimirGrafo();
+    string imprimirGrafo();
 
     string dijkstra(int);
 

@@ -27,9 +27,11 @@ void MainWindow::on_pushButton_clicked()
 
     //iniciarCliente();
 
-    obtenerDijkstra(ui->lineEdit->text().toStdString());
+    string msg = obtenerDijkstra(ui->lineEdit->text().toStdString());
 
-    //ui->plainTextEdit->appendPlainText(msg.c_str());
+    ui->plainTextEdit->clear();
+
+    ui->plainTextEdit->appendPlainText(msg.c_str());
 
 }
 
@@ -62,12 +64,10 @@ string MainWindow::abrirGrafo(string txt){
 //Actualizar grafo
 void MainWindow::on_pushButton_2_clicked()
 {
-\
-    actualizarGrafo();
 
     ui->plainTextEdit_2->clear();
 
-    ui->plainTextEdit_2->appendPlainText(abrirGrafo("texto.txt").c_str());
+    ui->plainTextEdit_2->appendPlainText(actualizarGrafo().c_str());
 
 
 }

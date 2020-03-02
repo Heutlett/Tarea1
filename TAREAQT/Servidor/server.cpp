@@ -25,6 +25,16 @@ int addrlen = sizeof(address);
 char buffer[1024] = {0};
 char *hello = "Hello from server";
 
+void limpiarBuffer(){
+
+    for(int i = 0; i < 1024; i++){
+
+        buffer[i] = NULL;
+
+    }
+
+}
+
 void crearSocket(){
 
     // Creating socket file descriptor
@@ -96,10 +106,10 @@ void recibir(){
 
 }
 
-void enviar(string enviar){
+void enviar(string e){
 
-    send(new_socket , enviar.data() , enviar.size() , 0 );
-    printf("Mensaje enviado: %s\n",enviar.c_str());
+    send(new_socket , e.data() , e.size() , 0 );
+    printf("Mensaje enviado: %s\n",e.c_str());
 
 }
 
@@ -112,11 +122,11 @@ int main(int argc, char const *argv[])
     socketName();
     listen();
 
-
     Grafo g;
-    string buffer2;
 
     while(1){
+
+        close(new_socket);
 
         accept();
 
@@ -129,51 +139,54 @@ int main(int argc, char const *argv[])
 
                 enviar("Recibido: 1, creando grafo");
                 recibir();
+                Grafo g;
+
                 g.crearGrafoString(buffer);
-                buffer2 = buffer;
                 printf("EL GRAFO RESULTANTE ES\n\n\n");
-                g.imprimirGrafo();
-                enviar("listo");
+                enviar(g.imprimirGrafo());
                 close(new_socket);
+                limpiarBuffer();
             }
-            //Devuelve el grafo en modo matriz
-            if(strcmp(buffer, "2") == 0){
 
-
-
-            }
             //Devuelve el dijkstra
             if(strcmp(buffer, "3") == 0){ //1
 
-                printf("el string guardado es %s", buffer2.c_str());
+                limpiarBuffer();
 
-                g.crearGrafoString(buffer2);
+                enviar("Generando dijkstra\n"); //2
 
-                enviar("Recibido, generando dijkstra"); //2
                 recibir(); //3
+
+                Grafo g;
+
+                printf("intentando imprimir grafo vacio = %s", g.imprimirGrafo().c_str());
+
+                g.crearGrafoString(buffer);
+
+                enviar("Grafo regenerado\n"); //4
+
+                limpiarBuffer();
+
+                recibir(); //5
 
                 int i = stoi(buffer);
 
-                printf("el entero recibido es %i\n", i);
+                printf("numero recibido %i\n",i);
 
-                g.imprimirGrafo();
+                string e = g.dijkstra(i);
 
-                string enviar = g.dijkstra(i);
+                printf("dijsktra resultante %s\n",e.c_str());
 
-                cout << "el dijkstra es: "<< endl <<enviar << endl;
+                enviar(e); //6
 
-                enviar = "estoy mamando";
-
-                //printf("el dijsktra es: %s", enviar);
-
-                send(new_socket , enviar.data() , enviar.size() , 0 );//4
-                printf("Dijkstra enviado\n");
                 close(new_socket);
+                limpiarBuffer();
             }
 
         }
 
         close(new_socket);
+        limpiarBuffer();
 
     }
 

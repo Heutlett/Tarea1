@@ -25,6 +25,16 @@ ManejoArchivos * b;
 
 void iniciarCliente();
 
+void limpiarBuffer(){
+
+    for(int i = 0; i < 1024; i++){
+
+        buffer[i] = NULL;
+
+    }
+
+}
+
 void recibir(){
 
     valread = read( sock , buffer, 1024);
@@ -39,7 +49,9 @@ void enviar(string msg){
 
 }
 
-void actualizarGrafo(){
+string actualizarGrafo(){
+
+    limpiarBuffer();
 
     iniciarCliente();
     enviar("1");
@@ -49,22 +61,29 @@ void actualizarGrafo(){
     //send(sock , mensaje.data() , mensaje.size() , 0 );
     recibir();
     close(sock);
+    return buffer;
 
 }
 
-void obtenerDijkstra(string msg){
+string obtenerDijkstra(string msg){
 
+    limpiarBuffer();
 
-    //
-    //actualizarGrafo();
     iniciarCliente();
     enviar("3"); //1
     recibir(); //2
-    enviar(msg); //3
-    recibir();//4
-    printf("%s\n",buffer );
+
+    string mensaje = b->abrirGrafoTXT("texto.txt");
+    enviar(mensaje);//3
+
+    recibir(); //4
+
+    enviar(msg); //5
+
+    recibir();//6
+    //printf("%s\n",buffer );
     close(sock);
-    //return buffer;
+    return buffer;
 
 }
 

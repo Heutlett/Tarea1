@@ -20,14 +20,19 @@ Vertice::Vertice(int n) {
 
 }
 
-void Vertice::imprimirAristas(){
+string Vertice::imprimirAristas(){
+
+    string resultado = "";
 
     for(int i = 0; i < this->cantAristas; i++){
 
-        cout << aristas.at(i) << " ";
+        //cout << aristas.at(i) << " ";
+        resultado += to_string(aristas.at(i)) + " ";
 
     }
-    cout << endl;
+    //cout << endl;
+
+    return resultado;
 }
 
 

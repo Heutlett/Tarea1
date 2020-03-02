@@ -21,17 +21,20 @@ Grafo::Grafo() {
 
 }
 
-void Grafo::imprimirGrafo(){
+string Grafo::imprimirGrafo(){
 
     node * tmp = vertices.gethead();
+    string resultado = "";
 
     while(tmp != NULL){
 
-        tmp->data->imprimirAristas();
+        resultado += tmp->data->imprimirAristas() + "\n";
+        //tmp->data->imprimirAristas();
         tmp = tmp->next;
 
     }
 
+    return resultado;
 
 }
 
@@ -99,14 +102,14 @@ string Grafo::dijkstra(int inicio){
       count++;
    }
 
-   string resultado = "";
+   string resultado = "Dijkstra from v" + to_string(inicio) + " to all nodes:\n";
 
    for(i=0;i<vertices.getSize();i++)
    if(i!=inicio) {
        int dist = distance[i];
        resultado += "\nDistance of node" + to_string(i) + "=" + to_string(dist);
        resultado += "\nPath=" + to_string(i);
-      printf("\nDistance of node%i=%dist");
+      printf("\n\nDistance of node%i=%dist");
       printf("\nPath=%i",i);
       j=i;
       do {

@@ -31,7 +31,7 @@ struct Vertice {
 
         vector<int> aristas;
 
-        void imprimirAristas();
+        string imprimirAristas();
 
     private:
 
