@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 
 #include "comunicarServer.h"
+#include <string>
+
+using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-     ui->plainTextEdit_2->appendPlainText(abrirGrafo("texto.txt").c_str());
+    //iniciarCliente();
 
 }
 
@@ -22,8 +25,11 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
 
-    ui->plainTextEdit->appendPlainText(comuServer().c_str());
+    //iniciarCliente();
 
+    obtenerDijkstra(ui->lineEdit->text().toStdString());
+
+    //ui->plainTextEdit->appendPlainText(msg.c_str());
 
 }
 
@@ -53,3 +59,15 @@ string MainWindow::abrirGrafo(string txt){
 
 }
 
+//Actualizar grafo
+void MainWindow::on_pushButton_2_clicked()
+{
+\
+    actualizarGrafo();
+
+    ui->plainTextEdit_2->clear();
+
+    ui->plainTextEdit_2->appendPlainText(abrirGrafo("texto.txt").c_str());
+
+
+}

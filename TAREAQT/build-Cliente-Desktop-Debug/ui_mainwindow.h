@@ -34,6 +34,7 @@ public:
     QPlainTextEdit *plainTextEdit_2;
     QLabel *label_2;
     QLineEdit *lineEdit;
+    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QMenu *menuInterfaz_del_grafo;
     QStatusBar *statusbar;
@@ -65,6 +66,9 @@ public:
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setGeometry(QRect(880, 160, 201, 51));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(20, 160, 201, 61));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -89,6 +93,7 @@ public:
         pushButton->setText(QCoreApplication::translate("MainWindow", "Mostrar dijkstra", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Resultado de dijkstra", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Grafo actual", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Actualizar grafo", nullptr));
         menuInterfaz_del_grafo->setTitle(QCoreApplication::translate("MainWindow", "Interfaz del grafo", nullptr));
     } // retranslateUi
 
