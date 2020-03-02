@@ -112,3 +112,64 @@ void Grafo::dijkstra(int inicio){
     
 }
 
+void Grafo::crearGrafoString(string texto2){
+
+    
+    //Agregando vertices
+    
+    int mayor = 0;
+    
+    for(int i = 0; i < texto2.length()-1; i++){
+        
+        if(texto2.at(i) == 'v'){
+            
+            if(texto2.at(i+1)-'0' > mayor){
+                mayor  = texto2.at(i+1)-'0';
+            }
+            
+        }
+        
+    }
+    
+    for(int i = 0; i <= mayor; i++){
+        
+        agregarVertice();
+        
+    }
+    
+    //Agregando aristas
+    
+    int vini = -1, vfin = -1, peso;
+    string texto3 = "";
+
+    
+    for(int i = 0; i < texto2.length()-1; i++){
+        
+        if(texto2.at(i) != '\n'){
+            
+            texto3 += texto2.at(i);
+            
+        }else{
+            
+            if(texto3.length() > 5){
+                
+                vini = texto3.at(1)-'0';
+                vfin = texto3.at(5)-'0';
+                peso = texto3.at(9)-'0';
+
+                agregarArista(vini,vfin,peso);
+
+                texto3 = "";
+                
+            }
+        }
+    }
+    
+    
+    cout << endl;
+    
+    imprimirGrafo();
+    
+
+    
+}

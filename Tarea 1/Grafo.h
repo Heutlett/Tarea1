@@ -16,6 +16,10 @@
 
 #include <iostream>
 #include "linked_list.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fstream>
 
 using namespace std;
 
@@ -37,6 +41,7 @@ public:
     
     void dijkstra(int);
     
+    void crearGrafoString(string);
     
     
 

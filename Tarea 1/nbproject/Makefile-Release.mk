@@ -38,7 +38,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/Grafo.o \
 	${OBJECTDIR}/Vertice.o \
 	${OBJECTDIR}/linked_list.o \
-	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/server.o
 
 
@@ -81,15 +80,10 @@ ${OBJECTDIR}/linked_list.o: linked_list.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linked_list.o linked_list.cpp
 
-${OBJECTDIR}/main.o: main.cpp
+${OBJECTDIR}/server.o: server.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
-
-${OBJECTDIR}/server.o: server.c
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/server.o server.c
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/server.o server.cpp
 
 # Subprojects
 .build-subprojects:
