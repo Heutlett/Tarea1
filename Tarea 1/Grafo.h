@@ -14,7 +14,6 @@
 #ifndef GRAFO_H
 #define GRAFO_H
 
-#include <iostream>
 #include "linked_list.h"
 #include <stdio.h>
 #include <stdlib.h>

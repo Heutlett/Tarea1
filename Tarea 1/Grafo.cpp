@@ -100,12 +100,13 @@ void Grafo::dijkstra(int inicio){
    }
    for(i=0;i<vertices.getSize();i++)
    if(i!=inicio) {
-      cout<<"\nDistance of node"<<i<<"="<<distance[i];
-      cout<<"\nPath="<<i;
+       int dist = distance[i];
+      printf("\nDistance of node%i=%dist");
+      printf("\nPath=%i",i);
       j=i;
       do {
          j=pred[j];
-         cout<<"<-"<<j;
+         printf("<-%j");
       }while(j!=inicio);
    }
     

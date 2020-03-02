@@ -21,29 +21,9 @@
 #include <string.h>
 #include <fstream>
 
-void cargarGrafoTXT(string nombre){
+void cargarGrafoTXT(string texto2){
     
-    Grafo  grafo;
-    
-    ifstream archivo;
-    string texto;
-    string texto2 = "";
-    
-    archivo.open(nombre, ios::in);
-    
-    if(archivo.fail()){
-        
-        cout << "No se pudo abrir el archivo";
-        exit(1);
-        
-    }
-    
-    while(!archivo.eof()){
-        
-        getline(archivo, texto);
-        texto2 += texto + "\n";
-        
-    }
+
     
     //Agregando vertices
     

@@ -75,6 +75,8 @@ int main(int argc, char const *argv[])
     printf("EL GRAFO RESULTANTE ES\n\n\n");
     g.imprimirGrafo();
     
+    g.dijkstra(3);
+    
     send(new_socket , hello , strlen(hello) , 0 ); 
     printf("Hello message sent\n"); 
     return 0; 
