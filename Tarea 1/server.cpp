@@ -7,20 +7,28 @@
 
 // Server side C/C++ program to demonstrate Socket programming 
 #include <unistd.h> 
-#include <stdio.h> 
+//#include <stdio.h> 
 #include <sys/socket.h> 
-#include <stdlib.h> 
+//#include <stdlib.h> 
 #include <netinet/in.h> 
-#include <string.h> 
+#include "Grafo.h"
+
+using namespace std;
+
 #define PORT 8081 
+
+int server_fd, new_socket, valread; 
+struct sockaddr_in address; 
+int opt = 1; 
+int addrlen = sizeof(address); 
+char buffer[1024] = {0}; 
+char *hello = "Hello from server"; 
+
+Grafo g;
+
 int main(int argc, char const *argv[]) 
 { 
-    int server_fd, new_socket, valread; 
-    struct sockaddr_in address; 
-    int opt = 1; 
-    int addrlen = sizeof(address); 
-    char buffer[1024] = {0}; 
-    char *hello = "Hello from server"; 
+    
        
     // Creating socket file descriptor 
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) 
@@ -58,8 +66,15 @@ int main(int argc, char const *argv[])
         perror("accept"); 
         exit(EXIT_FAILURE); 
     } 
+    
     valread = read( new_socket , buffer, 1024); 
-    printf("%s\n",buffer ); 
+    printf("%s\n",buffer );
+    
+    g.crearGrafoString(buffer);
+    
+    printf("EL GRAFO RESULTANTE ES\n\n\n");
+    g.imprimirGrafo();
+    
     send(new_socket , hello , strlen(hello) , 0 ); 
     printf("Hello message sent\n"); 
     return 0; 
