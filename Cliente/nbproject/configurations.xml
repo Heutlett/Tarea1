@@ -36,6 +36,13 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <commandlineTool>g++</commandlineTool>
+          <commandLine>`wx-config --cxxflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <commandLine>`wx-config --libs`</commandLine>
+        </linkerTool>
       </compileType>
       <item path="ManejoArchivos.h" ex="false" tool="3" flavor2="0">
       </item>
