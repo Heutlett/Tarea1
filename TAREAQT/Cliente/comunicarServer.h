@@ -1,3 +1,7 @@
+
+#ifndef COMUNICARSERVER_H
+#define COMUNICARSERVER_H
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,23 +9,22 @@
  */
 
 // Client side C/C++ program to demonstrate Socket programming
-/*
+
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
 #include "ManejoArchivos.h"
-#include "mainwindow.h"
 
 #define PORT 8081
 
-int sock = 0, valread;
-struct sockaddr_in serv_addr;
-char *hello = "Hello from client";
-char buffer[1024] = {0};
-
-
-int main(int argc, char *argv[])
+string comuServer()
 {
+
+    int sock = 0, valread;
+    struct sockaddr_in serv_addr;
+    char *hello = "Hello from client";
+    char buffer[1024] = {0};
+
 
     ManejoArchivos * b;
 
@@ -31,7 +34,7 @@ int main(int argc, char *argv[])
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
         printf("\n Socket creation error \n");
-        return -1;
+        return "fail";
     }
 
     serv_addr.sin_family = AF_INET;
@@ -41,21 +44,23 @@ int main(int argc, char *argv[])
     if(inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr)<=0)
     {
         printf("\nInvalid address/ Address not supported \n");
-        return -1;
+        return "fail";
     }
 
     if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
     {
         printf("\nConnection Failed \n");
-        return -1;
+        return "fail";
     }
 
     send(sock , mensaje.data() , mensaje.size() , 0 );
     printf("Hello message sent\n");
     valread = read( sock , buffer, 1024);
     printf("%s\n",buffer );
-    return 0;
+    return buffer;
 }
 
 
-*/
+
+
+#endif // COMUNICARSERVER_H

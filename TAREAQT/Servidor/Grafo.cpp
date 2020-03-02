@@ -64,7 +64,7 @@ void Grafo::agregarArista(int verticeIni, int verticeFin, int peso){
 
 }
 
-void Grafo::dijkstra(int inicio){
+string Grafo::dijkstra(int inicio){
 
    int cost[max][max],distance[max],pred[max];
    int visited[max],count,mindistance,nextnode,i,j;
@@ -98,18 +98,25 @@ void Grafo::dijkstra(int inicio){
       }
       count++;
    }
+
+   string resultado = "";
+
    for(i=0;i<vertices.getSize();i++)
    if(i!=inicio) {
        int dist = distance[i];
+       resultado += "\nDistance of node" + to_string(i) + "=" + to_string(dist);
+       resultado += "\nPath=" + to_string(i);
       printf("\nDistance of node%i=%dist");
       printf("\nPath=%i",i);
       j=i;
       do {
          j=pred[j];
          printf("<-%j");
+         resultado += "<-" + to_string(j);
       }while(j!=inicio);
    }
 
+   return resultado;
 
 }
 

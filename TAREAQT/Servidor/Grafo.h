@@ -38,7 +38,7 @@ public:
 
     void imprimirGrafo();
 
-    void dijkstra(int);
+    string dijkstra(int);
 
     void crearGrafoString(string);
 

@@ -47,8 +47,6 @@ public:
 
     }
 
-
-
     return texto2;
 
     }

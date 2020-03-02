@@ -22,6 +22,7 @@ SOURCES += \
 
 HEADERS += \
     ManejoArchivos.h \
+    comunicarServer.h \
     mainwindow.h
 
 FORMS += \
