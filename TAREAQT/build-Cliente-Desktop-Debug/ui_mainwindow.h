@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -20,6 +21,7 @@
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -31,10 +33,10 @@ public:
     QPushButton *pushButton;
     QLabel *label;
     QPlainTextEdit *plainTextEdit;
-    QPlainTextEdit *plainTextEdit_2;
     QLabel *label_2;
     QLineEdit *lineEdit;
     QPushButton *pushButton_2;
+    QTableWidget *tableWidget;
     QMenuBar *menubar;
     QMenu *menuInterfaz_del_grafo;
     QStatusBar *statusbar;
@@ -43,36 +45,35 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1119, 600);
+        MainWindow->resize(1142, 651);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(630, 160, 221, 51));
+        pushButton->setGeometry(QRect(630, 130, 221, 51));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(630, 230, 211, 17));
+        label->setGeometry(QRect(620, 230, 211, 17));
         plainTextEdit = new QPlainTextEdit(centralwidget);
         plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
-        plainTextEdit->setGeometry(QRect(630, 250, 471, 281));
+        plainTextEdit->setGeometry(QRect(620, 250, 471, 301));
         plainTextEdit->setReadOnly(true);
-        plainTextEdit_2 = new QPlainTextEdit(centralwidget);
-        plainTextEdit_2->setObjectName(QString::fromUtf8("plainTextEdit_2"));
-        plainTextEdit_2->setGeometry(QRect(20, 250, 511, 281));
-        plainTextEdit_2->setReadOnly(true);
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(20, 230, 131, 17));
+        label_2->setGeometry(QRect(60, 210, 131, 17));
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(880, 160, 201, 51));
+        lineEdit->setGeometry(QRect(880, 140, 201, 51));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(20, 160, 201, 61));
+        pushButton_2->setGeometry(QRect(60, 130, 201, 61));
+        tableWidget = new QTableWidget(centralwidget);
+        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableWidget->setGeometry(QRect(60, 230, 541, 321));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1119, 22));
+        menubar->setGeometry(QRect(0, 0, 1142, 22));
         menuInterfaz_del_grafo = new QMenu(menubar);
         menuInterfaz_del_grafo->setObjectName(QString::fromUtf8("menuInterfaz_del_grafo"));
         MainWindow->setMenuBar(menubar);

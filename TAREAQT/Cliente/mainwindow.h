@@ -20,7 +20,6 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    string abrirGrafo(string);
 
     void on_pushButton_2_clicked();
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1119</width>
-    <height>600</height>
+    <width>1142</width>
+    <height>651</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>630</x>
-      <y>160</y>
+      <y>130</y>
       <width>221</width>
       <height>51</height>
      </rect>
@@ -30,7 +30,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>620</x>
       <y>230</y>
       <width>211</width>
       <height>17</height>
@@ -43,23 +43,10 @@
    <widget class="QPlainTextEdit" name="plainTextEdit">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>620</x>
       <y>250</y>
       <width>471</width>
-      <height>281</height>
-     </rect>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>250</y>
-      <width>511</width>
-      <height>281</height>
+      <height>301</height>
      </rect>
     </property>
     <property name="readOnly">
@@ -69,8 +56,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>230</y>
+      <x>60</x>
+      <y>210</y>
       <width>131</width>
       <height>17</height>
      </rect>
@@ -83,7 +70,7 @@
     <property name="geometry">
      <rect>
       <x>880</x>
-      <y>160</y>
+      <y>140</y>
       <width>201</width>
       <height>51</height>
      </rect>
@@ -92,8 +79,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>160</y>
+      <x>60</x>
+      <y>130</y>
       <width>201</width>
       <height>61</height>
      </rect>
@@ -102,13 +89,23 @@
      <string>Actualizar grafo</string>
     </property>
    </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>230</y>
+      <width>541</width>
+      <height>321</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1119</width>
+     <width>1142</width>
      <height>22</height>
     </rect>
    </property>

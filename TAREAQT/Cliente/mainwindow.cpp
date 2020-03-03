@@ -3,6 +3,7 @@
 
 #include "comunicarServer.h"
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -35,39 +36,41 @@ void MainWindow::on_pushButton_clicked()
 
 }
 
-string MainWindow::abrirGrafo(string txt){
-
-    fstream archivo;
-    string texto;
-    string texto2 = "";
-
-    archivo.open(txt, ios::in);
-
-    if(archivo.fail()){
-
-        printf("No se pudo abrir el archivo");
-        exit(1);
-
-    }
-
-    while(!archivo.eof()){
-
-        getline(archivo, texto);
-        texto2 += texto + "\n";
-
-    }
-
-    return texto2;
-
-}
-
 //Actualizar grafo
 void MainWindow::on_pushButton_2_clicked()
 {
+    string grafo = actualizarGrafo();
+    int cantVertices = 0;
+    int fila = 0;
+    int columna = 0;
+    QString tmp = "";
 
-    ui->plainTextEdit_2->clear();
+    for(int i = 0; i < grafo.size(); i++){
 
-    ui->plainTextEdit_2->appendPlainText(actualizarGrafo().c_str());
+        if(grafo.at(i) == '\n'){
+            cantVertices++;
+        }
+    }
 
+    ui->tableWidget->setColumnCount(cantVertices);
+    ui->tableWidget->setRowCount(cantVertices);
 
+    for(int i = 0; i < grafo.size(); i++){
+
+        if(grafo.at(i) == '\n'){
+            fila++;
+            tmp = "";
+            columna = 0;
+        }
+
+        if(grafo.at(i) == ' ' ){
+            ui->tableWidget->setItem(fila,columna, new QTableWidgetItem(tmp));
+            columna++;
+            tmp = "";
+        }
+
+        if(grafo.at(i) != ' ' && grafo.at(i) != '\n'){
+           tmp += grafo.at(i);
+        }
+    }
 }
