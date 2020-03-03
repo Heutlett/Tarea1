@@ -3,17 +3,11 @@
 #define INFINITY 9999
 #define max 5
 
-/**
- * @brief Constructor del grafo
- */
 Grafo::Grafo() {
 
 
 }
-/**
- * @brief Devuelve un string con los datos del grafo
- * @return String con datos de grafo
- */
+
 string Grafo::imprimirGrafo(){
 
     node * tmp = vertices.gethead();
@@ -27,9 +21,7 @@ string Grafo::imprimirGrafo(){
     }
     return resultado;
 }
-/**
- * @brief Agrega un vertice al grafo
- */
+
 void Grafo::agregarVertice(){
 
     vertices.add_node();
@@ -45,12 +37,7 @@ void Grafo::agregarVertice(){
 
     }
 }
-/**
- * @brief Agrega una arista al grafo
- * @param Numero del vertice inicial
- * @param Numero del vertice final
- * @param Peso de la arista
- */
+
 void Grafo::agregarArista(int verticeIni, int verticeFin, int peso){
 
     Vertice * tmp = this->vertices.getVertice(verticeIni);
@@ -58,11 +45,7 @@ void Grafo::agregarArista(int verticeIni, int verticeFin, int peso){
     tmp->aristas.at(verticeFin) = peso;
 
 }
-/**
- * @brief Calcula la ruta mas corta del vertice pasado por parametro y lo devuelve en un string
- * @param Numero del vertice de inicio
- * @return String con la ruta mas corta
- */
+
 string Grafo::dijkstra(int inicio){
 
    int cost[max][max],distance[max],pred[max];
@@ -118,10 +101,7 @@ string Grafo::dijkstra(int inicio){
    return resultado;
 
 }
-/**
- * @brief Importa un grafo a partir de un string
- * @param String que contiene el grafo en modo texto
- */
+
 void Grafo::crearGrafoString(string texto2){
 
     //Agregando vertices

@@ -1,3 +1,11 @@
+/**
+  * @file mainwindow.h
+  * @date 3/2/2020
+  * @author Carlos Adrian Araya Ramirez 2018319701
+  * @title main del cliente
+  * @brief Se controla lo que sucede en la interfaz
+  */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -10,37 +18,24 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-/**
- * @brief
- *
- */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    /**
-     * @brief
-     *
-     * @param parent
-     */
+
     MainWindow(QWidget *parent = nullptr);
-    /**
-     * @brief
-     *
-     */
+
     ~MainWindow();
 
 private slots:
-    /**
-     * @brief
-     *
-     */
-    void on_pushButton_clicked();
 
     /**
-     * @brief
-     *
+     * @brief Muestra el resultado del algoritmo dijkstra en un campo de texto
+     */
+    void on_pushButton_clicked();
+    /**
+     * @brief Actualiza el grafo en la tabla de la interfaz grafica
      */
     void on_pushButton_2_clicked();
 

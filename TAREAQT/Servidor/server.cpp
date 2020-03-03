@@ -1,3 +1,11 @@
+/**
+  * @file server.cpp
+  * @date 3/2/2020
+  * @author Carlos Adrian Araya Ramirez 2018319701
+  * @title Codigo de servidor
+  * @brief En este archivo se definen las funciones del servidor
+  */
+
 #include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>

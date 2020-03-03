@@ -1,3 +1,12 @@
+/**
+  * @file comunicarServer.h
+  * @date 3/2/2020
+  * @author Carlos Adrian Araya Ramirez 2018319701
+  * @title Socket de cliente
+  * @brief Se manejan las funciones del cliente.
+  */
+
+
 #ifndef COMUNICARSERVER_H
 #define COMUNICARSERVER_H
 

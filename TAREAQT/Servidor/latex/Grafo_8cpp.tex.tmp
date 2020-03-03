@@ -1,0 +1,27 @@
+\hypertarget{Grafo_8cpp}{}\section{Grafo.\+cpp File Reference}
+\label{Grafo_8cpp}\index{Grafo.\+cpp@{Grafo.\+cpp}}
+{\ttfamily \#include \char`\"{}Grafo.\+h\char`\"{}}\newline
+Include dependency graph for Grafo.\+cpp\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Grafo_8cpp_a956e2723d559858d08644ac99146e910}{I\+N\+F\+I\+N\+I\+TY}~9999
+\item 
+\#define \hyperlink{Grafo_8cpp_a2e1da8593b0244d8e9e3b84ef7b35e73}{max}~5
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Grafo_8cpp_a956e2723d559858d08644ac99146e910}\label{Grafo_8cpp_a956e2723d559858d08644ac99146e910}} 
+\index{Grafo.\+cpp@{Grafo.\+cpp}!I\+N\+F\+I\+N\+I\+TY@{I\+N\+F\+I\+N\+I\+TY}}
+\index{I\+N\+F\+I\+N\+I\+TY@{I\+N\+F\+I\+N\+I\+TY}!Grafo.\+cpp@{Grafo.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+F\+I\+N\+I\+TY}{INFINITY}}
+{\footnotesize\ttfamily \#define I\+N\+F\+I\+N\+I\+TY~9999}
+
+\mbox{\Hypertarget{Grafo_8cpp_a2e1da8593b0244d8e9e3b84ef7b35e73}\label{Grafo_8cpp_a2e1da8593b0244d8e9e3b84ef7b35e73}} 
+\index{Grafo.\+cpp@{Grafo.\+cpp}!max@{max}}
+\index{max@{max}!Grafo.\+cpp@{Grafo.\+cpp}}
+\subsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily \#define max~5}
+

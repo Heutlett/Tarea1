@@ -19,9 +19,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-/**
- * @brief Muestra el resultado del algoritmo dijkstra en un campo de texto
- */
 void MainWindow::on_pushButton_clicked()
 {
 
@@ -32,9 +29,7 @@ void MainWindow::on_pushButton_clicked()
 
 }
 
-/**
- * @brief Actualiza el grafo en la tabla de la interfaz grafica
- */
+
 void MainWindow::on_pushButton_2_clicked()
 {
     string grafo = actualizarGrafo();

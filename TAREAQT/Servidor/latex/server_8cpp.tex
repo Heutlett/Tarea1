@@ -1,0 +1,236 @@
+\hypertarget{server_8cpp}{}\section{server.\+cpp File Reference}
+\label{server_8cpp}\index{server.\+cpp@{server.\+cpp}}
+
+
+En este archivo se definen las funciones del servidor.  
+
+
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Grafo.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for server.\+cpp\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{server_8cpp_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+RT}~8081
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{server_8cpp_a63311a5db4f37e3cd3bd2e665b2364b0}{limpiar\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Limpia el buffer utilizado para intercambiar mensajes. \end{DoxyCompactList}\item 
+void \hyperlink{server_8cpp_aee90110fc649a130c7ae44851daa4ef0}{crear\+Socket} ()
+\begin{DoxyCompactList}\small\item\em Crea el socket de servidor. \end{DoxyCompactList}\item 
+void \hyperlink{server_8cpp_af2b2a0e29f98e28573121638fc9a033c}{attach\+Socket} ()
+\begin{DoxyCompactList}\small\item\em Ata el servidor al puerto 8080. \end{DoxyCompactList}\item 
+void \hyperlink{server_8cpp_ad5d0ee102c2470b8f384863496e93b73}{attributes} ()
+\begin{DoxyCompactList}\small\item\em Define los atributos del servidor. \end{DoxyCompactList}\item 
+void \hyperlink{server_8cpp_a0bda6b96e3aead00d5859fa65e932047}{socket\+Name} ()
+\begin{DoxyCompactList}\small\item\em Hace el bind del servidor. \end{DoxyCompactList}\item 
+void \hyperlink{server_8cpp_a458bbe4cf81360301586b2e62a7f9dd2}{listen} ()
+\begin{DoxyCompactList}\small\item\em Pone el servidor a la escucha. \end{DoxyCompactList}\item 
+void \hyperlink{server_8cpp_aadb9f3b844fb4cf98288cd3c60a3af91}{accept} ()
+\begin{DoxyCompactList}\small\item\em Acepta un cliente. \end{DoxyCompactList}\item 
+void \hyperlink{server_8cpp_a81a569de1d84dcee634334566972c346}{recibir} ()
+\begin{DoxyCompactList}\small\item\em Recibe mensajes del cliente. \end{DoxyCompactList}\item 
+void \hyperlink{server_8cpp_a18b7ed70f30a9861168c5997b4fe7846}{enviar} (string e)
+\begin{DoxyCompactList}\small\item\em Envia un mensaje al cliente. \end{DoxyCompactList}\item 
+int \hyperlink{server_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}{main} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{server_8cpp_a6cf4711aa7ecd548b03b6e50d44b5aa6}{server\+\_\+fd}
+\item 
+int \hyperlink{server_8cpp_a4848332eecf4c58ee3b11a4f8513c3db}{new\+\_\+socket}
+\item 
+int \hyperlink{server_8cpp_add7ecd41088692bcddf064539b23d1e6}{valread}
+\item 
+struct sockaddr\+\_\+in \hyperlink{server_8cpp_a367491879e8ce396250c54956bc6ed5e}{address}
+\item 
+int \hyperlink{server_8cpp_a217e4b46670419e6c3665b3c9f96b7da}{opt} = 1
+\item 
+int \hyperlink{server_8cpp_a831741adfdfd6d071a62a5bc72ea1aeb}{addrlen} = sizeof(\hyperlink{server_8cpp_a367491879e8ce396250c54956bc6ed5e}{address})
+\item 
+char \hyperlink{server_8cpp_a28d4d3d8445e73a696b2d6f7eadabd96}{buffer} \mbox{[}1024\mbox{]} = \{0\}
+\item 
+char $\ast$ \hyperlink{server_8cpp_a23861b926acb6da386873c22447b8d89}{hello} = \char`\"{}Hello from server\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+En este archivo se definen las funciones del servidor. 
+
+\begin{DoxyDate}{Date}
+3/2/2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Carlos Adrian Araya Ramirez 2018319701  Codigo de servidor 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{server_8cpp_a614217d263be1fb1a5f76e2ff7be19a2}\label{server_8cpp_a614217d263be1fb1a5f76e2ff7be19a2}} 
+\index{server.\+cpp@{server.\+cpp}!P\+O\+RT@{P\+O\+RT}}
+\index{P\+O\+RT@{P\+O\+RT}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{P\+O\+RT}{PORT}}
+{\footnotesize\ttfamily \#define P\+O\+RT~8081}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{server_8cpp_aadb9f3b844fb4cf98288cd3c60a3af91}\label{server_8cpp_aadb9f3b844fb4cf98288cd3c60a3af91}} 
+\index{server.\+cpp@{server.\+cpp}!accept@{accept}}
+\index{accept@{accept}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void accept (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Acepta un cliente. 
+
+\mbox{\Hypertarget{server_8cpp_af2b2a0e29f98e28573121638fc9a033c}\label{server_8cpp_af2b2a0e29f98e28573121638fc9a033c}} 
+\index{server.\+cpp@{server.\+cpp}!attach\+Socket@{attach\+Socket}}
+\index{attach\+Socket@{attach\+Socket}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{attach\+Socket()}{attachSocket()}}
+{\footnotesize\ttfamily void attach\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Ata el servidor al puerto 8080. 
+
+\mbox{\Hypertarget{server_8cpp_ad5d0ee102c2470b8f384863496e93b73}\label{server_8cpp_ad5d0ee102c2470b8f384863496e93b73}} 
+\index{server.\+cpp@{server.\+cpp}!attributes@{attributes}}
+\index{attributes@{attributes}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{attributes()}{attributes()}}
+{\footnotesize\ttfamily void attributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Define los atributos del servidor. 
+
+\mbox{\Hypertarget{server_8cpp_aee90110fc649a130c7ae44851daa4ef0}\label{server_8cpp_aee90110fc649a130c7ae44851daa4ef0}} 
+\index{server.\+cpp@{server.\+cpp}!crear\+Socket@{crear\+Socket}}
+\index{crear\+Socket@{crear\+Socket}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{crear\+Socket()}{crearSocket()}}
+{\footnotesize\ttfamily void crear\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Crea el socket de servidor. 
+
+\mbox{\Hypertarget{server_8cpp_a18b7ed70f30a9861168c5997b4fe7846}\label{server_8cpp_a18b7ed70f30a9861168c5997b4fe7846}} 
+\index{server.\+cpp@{server.\+cpp}!enviar@{enviar}}
+\index{enviar@{enviar}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{enviar()}{enviar()}}
+{\footnotesize\ttfamily void enviar (\begin{DoxyParamCaption}\item[{string}]{e }\end{DoxyParamCaption})}
+
+
+
+Envia un mensaje al cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mensaje} & a enviar al cliente \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{server_8cpp_a63311a5db4f37e3cd3bd2e665b2364b0}\label{server_8cpp_a63311a5db4f37e3cd3bd2e665b2364b0}} 
+\index{server.\+cpp@{server.\+cpp}!limpiar\+Buffer@{limpiar\+Buffer}}
+\index{limpiar\+Buffer@{limpiar\+Buffer}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{limpiar\+Buffer()}{limpiarBuffer()}}
+{\footnotesize\ttfamily void limpiar\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Limpia el buffer utilizado para intercambiar mensajes. 
+
+\mbox{\Hypertarget{server_8cpp_a458bbe4cf81360301586b2e62a7f9dd2}\label{server_8cpp_a458bbe4cf81360301586b2e62a7f9dd2}} 
+\index{server.\+cpp@{server.\+cpp}!listen@{listen}}
+\index{listen@{listen}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{listen()}{listen()}}
+{\footnotesize\ttfamily void listen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pone el servidor a la escucha. 
+
+\mbox{\Hypertarget{server_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}\label{server_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}} 
+\index{server.\+cpp@{server.\+cpp}!main@{main}}
+\index{main@{main}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char const $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{server_8cpp_a81a569de1d84dcee634334566972c346}\label{server_8cpp_a81a569de1d84dcee634334566972c346}} 
+\index{server.\+cpp@{server.\+cpp}!recibir@{recibir}}
+\index{recibir@{recibir}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{recibir()}{recibir()}}
+{\footnotesize\ttfamily void recibir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recibe mensajes del cliente. 
+
+\mbox{\Hypertarget{server_8cpp_a0bda6b96e3aead00d5859fa65e932047}\label{server_8cpp_a0bda6b96e3aead00d5859fa65e932047}} 
+\index{server.\+cpp@{server.\+cpp}!socket\+Name@{socket\+Name}}
+\index{socket\+Name@{socket\+Name}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{socket\+Name()}{socketName()}}
+{\footnotesize\ttfamily void socket\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Hace el bind del servidor. 
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{server_8cpp_a367491879e8ce396250c54956bc6ed5e}\label{server_8cpp_a367491879e8ce396250c54956bc6ed5e}} 
+\index{server.\+cpp@{server.\+cpp}!address@{address}}
+\index{address@{address}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{address}{address}}
+{\footnotesize\ttfamily struct sockaddr\+\_\+in address}
+
+\mbox{\Hypertarget{server_8cpp_a831741adfdfd6d071a62a5bc72ea1aeb}\label{server_8cpp_a831741adfdfd6d071a62a5bc72ea1aeb}} 
+\index{server.\+cpp@{server.\+cpp}!addrlen@{addrlen}}
+\index{addrlen@{addrlen}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{addrlen}{addrlen}}
+{\footnotesize\ttfamily int addrlen = sizeof(\hyperlink{server_8cpp_a367491879e8ce396250c54956bc6ed5e}{address})}
+
+\mbox{\Hypertarget{server_8cpp_a28d4d3d8445e73a696b2d6f7eadabd96}\label{server_8cpp_a28d4d3d8445e73a696b2d6f7eadabd96}} 
+\index{server.\+cpp@{server.\+cpp}!buffer@{buffer}}
+\index{buffer@{buffer}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char buffer\mbox{[}1024\mbox{]} = \{0\}}
+
+\mbox{\Hypertarget{server_8cpp_a23861b926acb6da386873c22447b8d89}\label{server_8cpp_a23861b926acb6da386873c22447b8d89}} 
+\index{server.\+cpp@{server.\+cpp}!hello@{hello}}
+\index{hello@{hello}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{hello}{hello}}
+{\footnotesize\ttfamily char$\ast$ hello = \char`\"{}Hello from server\char`\"{}}
+
+\mbox{\Hypertarget{server_8cpp_a4848332eecf4c58ee3b11a4f8513c3db}\label{server_8cpp_a4848332eecf4c58ee3b11a4f8513c3db}} 
+\index{server.\+cpp@{server.\+cpp}!new\+\_\+socket@{new\+\_\+socket}}
+\index{new\+\_\+socket@{new\+\_\+socket}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{new\+\_\+socket}{new\_socket}}
+{\footnotesize\ttfamily int new\+\_\+socket}
+
+\mbox{\Hypertarget{server_8cpp_a217e4b46670419e6c3665b3c9f96b7da}\label{server_8cpp_a217e4b46670419e6c3665b3c9f96b7da}} 
+\index{server.\+cpp@{server.\+cpp}!opt@{opt}}
+\index{opt@{opt}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{opt}{opt}}
+{\footnotesize\ttfamily int opt = 1}
+
+\mbox{\Hypertarget{server_8cpp_a6cf4711aa7ecd548b03b6e50d44b5aa6}\label{server_8cpp_a6cf4711aa7ecd548b03b6e50d44b5aa6}} 
+\index{server.\+cpp@{server.\+cpp}!server\+\_\+fd@{server\+\_\+fd}}
+\index{server\+\_\+fd@{server\+\_\+fd}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{server\+\_\+fd}{server\_fd}}
+{\footnotesize\ttfamily int server\+\_\+fd}
+
+\mbox{\Hypertarget{server_8cpp_add7ecd41088692bcddf064539b23d1e6}\label{server_8cpp_add7ecd41088692bcddf064539b23d1e6}} 
+\index{server.\+cpp@{server.\+cpp}!valread@{valread}}
+\index{valread@{valread}!server.\+cpp@{server.\+cpp}}
+\subsubsection{\texorpdfstring{valread}{valread}}
+{\footnotesize\ttfamily int valread}
+

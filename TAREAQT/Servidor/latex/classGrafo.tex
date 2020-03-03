@@ -1,0 +1,136 @@
+\hypertarget{classGrafo}{}\section{Grafo Class Reference}
+\label{classGrafo}\index{Grafo@{Grafo}}
+
+
+{\ttfamily \#include $<$Grafo.\+h$>$}
+
+
+
+Collaboration diagram for Grafo\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGrafo_ab810bbe26a98e9af6661ccddff66b03b}{Grafo} ()
+\begin{DoxyCompactList}\small\item\em Constructor del grafo. \end{DoxyCompactList}\item 
+void \hyperlink{classGrafo_a7c8cab214abde4ddf2805e43aef72ef3}{agregar\+Vertice} ()
+\begin{DoxyCompactList}\small\item\em Agrega un vertice al grafo. \end{DoxyCompactList}\item 
+void \hyperlink{classGrafo_a6265e95aef23ebedcbfd69d5b39cb9ea}{agregar\+Arista} (int, int, int)
+\begin{DoxyCompactList}\small\item\em Agrega una arista al grafo. \end{DoxyCompactList}\item 
+string \hyperlink{classGrafo_a393cda605e6668dd60b8263fbed5a979}{imprimir\+Grafo} ()
+\begin{DoxyCompactList}\small\item\em Devuelve un string con los datos del grafo. \end{DoxyCompactList}\item 
+string \hyperlink{classGrafo_ad18bb16f84b89aea265793342de538a9}{dijkstra} (int)
+\begin{DoxyCompactList}\small\item\em Calcula la ruta mas corta del vertice pasado por parametro y lo devuelve en un string. \end{DoxyCompactList}\item 
+void \hyperlink{classGrafo_a7338b379e79f768ce524d022157ae8e7}{crear\+Grafo\+String} (string)
+\begin{DoxyCompactList}\small\item\em Importa un grafo a partir de un string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlinked__list}{linked\+\_\+list} \hyperlink{classGrafo_a616d168e63215c3c0051dc7504edeff1}{vertices}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGrafo_ab810bbe26a98e9af6661ccddff66b03b}\label{classGrafo_ab810bbe26a98e9af6661ccddff66b03b}} 
+\index{Grafo@{Grafo}!Grafo@{Grafo}}
+\index{Grafo@{Grafo}!Grafo@{Grafo}}
+\subsubsection{\texorpdfstring{Grafo()}{Grafo()}}
+{\footnotesize\ttfamily Grafo\+::\+Grafo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor del grafo. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGrafo_a6265e95aef23ebedcbfd69d5b39cb9ea}\label{classGrafo_a6265e95aef23ebedcbfd69d5b39cb9ea}} 
+\index{Grafo@{Grafo}!agregar\+Arista@{agregar\+Arista}}
+\index{agregar\+Arista@{agregar\+Arista}!Grafo@{Grafo}}
+\subsubsection{\texorpdfstring{agregar\+Arista()}{agregarArista()}}
+{\footnotesize\ttfamily void Grafo\+::agregar\+Arista (\begin{DoxyParamCaption}\item[{int}]{vertice\+Ini,  }\item[{int}]{vertice\+Fin,  }\item[{int}]{peso }\end{DoxyParamCaption})}
+
+
+
+Agrega una arista al grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Numero} & del vertice inicial \\
+\hline
+{\em Numero} & del vertice final \\
+\hline
+{\em Peso} & de la arista \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGrafo_a7c8cab214abde4ddf2805e43aef72ef3}\label{classGrafo_a7c8cab214abde4ddf2805e43aef72ef3}} 
+\index{Grafo@{Grafo}!agregar\+Vertice@{agregar\+Vertice}}
+\index{agregar\+Vertice@{agregar\+Vertice}!Grafo@{Grafo}}
+\subsubsection{\texorpdfstring{agregar\+Vertice()}{agregarVertice()}}
+{\footnotesize\ttfamily void Grafo\+::agregar\+Vertice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Agrega un vertice al grafo. 
+
+\mbox{\Hypertarget{classGrafo_a7338b379e79f768ce524d022157ae8e7}\label{classGrafo_a7338b379e79f768ce524d022157ae8e7}} 
+\index{Grafo@{Grafo}!crear\+Grafo\+String@{crear\+Grafo\+String}}
+\index{crear\+Grafo\+String@{crear\+Grafo\+String}!Grafo@{Grafo}}
+\subsubsection{\texorpdfstring{crear\+Grafo\+String()}{crearGrafoString()}}
+{\footnotesize\ttfamily void Grafo\+::crear\+Grafo\+String (\begin{DoxyParamCaption}\item[{string}]{texto2 }\end{DoxyParamCaption})}
+
+
+
+Importa un grafo a partir de un string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em String} & que contiene el grafo en modo texto \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGrafo_ad18bb16f84b89aea265793342de538a9}\label{classGrafo_ad18bb16f84b89aea265793342de538a9}} 
+\index{Grafo@{Grafo}!dijkstra@{dijkstra}}
+\index{dijkstra@{dijkstra}!Grafo@{Grafo}}
+\subsubsection{\texorpdfstring{dijkstra()}{dijkstra()}}
+{\footnotesize\ttfamily string Grafo\+::dijkstra (\begin{DoxyParamCaption}\item[{int}]{inicio }\end{DoxyParamCaption})}
+
+
+
+Calcula la ruta mas corta del vertice pasado por parametro y lo devuelve en un string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Numero} & del vertice de inicio \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String con la ruta mas corta 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGrafo_a393cda605e6668dd60b8263fbed5a979}\label{classGrafo_a393cda605e6668dd60b8263fbed5a979}} 
+\index{Grafo@{Grafo}!imprimir\+Grafo@{imprimir\+Grafo}}
+\index{imprimir\+Grafo@{imprimir\+Grafo}!Grafo@{Grafo}}
+\subsubsection{\texorpdfstring{imprimir\+Grafo()}{imprimirGrafo()}}
+{\footnotesize\ttfamily string Grafo\+::imprimir\+Grafo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve un string con los datos del grafo. 
+
+\begin{DoxyReturn}{Returns}
+String con datos de grafo 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classGrafo_a616d168e63215c3c0051dc7504edeff1}\label{classGrafo_a616d168e63215c3c0051dc7504edeff1}} 
+\index{Grafo@{Grafo}!vertices@{vertices}}
+\index{vertices@{vertices}!Grafo@{Grafo}}
+\subsubsection{\texorpdfstring{vertices}{vertices}}
+{\footnotesize\ttfamily \hyperlink{classlinked__list}{linked\+\_\+list} Grafo\+::vertices}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Grafo_8h}{Grafo.\+h}\item 
+\hyperlink{Grafo_8cpp}{Grafo.\+cpp}\end{DoxyCompactItemize}

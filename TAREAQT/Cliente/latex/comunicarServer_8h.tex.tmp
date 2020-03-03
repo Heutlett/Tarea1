@@ -1,0 +1,236 @@
+\hypertarget{comunicarServer_8h}{}\section{comunicar\+Server.\+h File Reference}
+\label{comunicarServer_8h}\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+
+
+Se manejan las funciones del cliente.  
+
+
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Manejo\+Archivos.\+h\char`\"{}}\newline
+Include dependency graph for comunicar\+Server.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{comunicarServer_8h_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+RT}~8081
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{comunicarServer_8h_aafb94c1ca9ba4be1aab5bf6c5740342d}{iniciar\+Cliente} ()
+\begin{DoxyCompactList}\small\item\em Inicia el socket del cliente. \end{DoxyCompactList}\item 
+void \hyperlink{comunicarServer_8h_a63311a5db4f37e3cd3bd2e665b2364b0}{limpiar\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Limpia el buffer que se utiliza para comunicarse con el servidor. \end{DoxyCompactList}\item 
+void \hyperlink{comunicarServer_8h_a81a569de1d84dcee634334566972c346}{recibir} ()
+\begin{DoxyCompactList}\small\item\em Recibe un mensaje del servidor y lo almacena en el buffer. \end{DoxyCompactList}\item 
+void \hyperlink{comunicarServer_8h_a4a8785d4a89047848b73004fea5c4280}{enviar} (string msg)
+\begin{DoxyCompactList}\small\item\em Envia un string al servidor. \end{DoxyCompactList}\item 
+string \hyperlink{comunicarServer_8h_a8adf912d43338cc7c0486c2c0a7c7358}{actualizar\+Grafo} ()
+\begin{DoxyCompactList}\small\item\em Actualiza el grafo del servidor. \end{DoxyCompactList}\item 
+string \hyperlink{comunicarServer_8h_aacaa972d336c6451c0b3a6c84752c6f4}{obtener\+Dijkstra} (string msg)
+\begin{DoxyCompactList}\small\item\em Pide al servidor el algoritmo dijkstra de un nodo en especifico pasado por parametro. \end{DoxyCompactList}\item 
+void \hyperlink{comunicarServer_8h_aee90110fc649a130c7ae44851daa4ef0}{crear\+Socket} ()
+\begin{DoxyCompactList}\small\item\em Crea el socket del cliente. \end{DoxyCompactList}\item 
+void \hyperlink{comunicarServer_8h_adc12bd0358f516e8d7bebae141b9ffed}{atributos} ()
+\begin{DoxyCompactList}\small\item\em Define los atributos del socket. \end{DoxyCompactList}\item 
+void \hyperlink{comunicarServer_8h_a04234c1d411ca3758fc16465a7b51798}{host\+Name} ()
+\begin{DoxyCompactList}\small\item\em Convierte direcciones I\+Pv4 y I\+Pv6 de texto a forma binaria. \end{DoxyCompactList}\item 
+void \hyperlink{comunicarServer_8h_a6dab0da5de3a84c97266e46c6178fbe3}{conectar} ()
+\begin{DoxyCompactList}\small\item\em Se conecta con el servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{comunicarServer_8h_a5903d0b282fc5eae503de618f896b5e1}{sock} = 0
+\item 
+int \hyperlink{comunicarServer_8h_add7ecd41088692bcddf064539b23d1e6}{valread}
+\item 
+struct sockaddr\+\_\+in \hyperlink{comunicarServer_8h_ac724fe70ae8af2d1406927ee7b574a1b}{serv\+\_\+addr}
+\item 
+char $\ast$ \hyperlink{comunicarServer_8h_a23861b926acb6da386873c22447b8d89}{hello} = \char`\"{}Hello from client\char`\"{}
+\item 
+char \hyperlink{comunicarServer_8h_a28d4d3d8445e73a696b2d6f7eadabd96}{buffer} \mbox{[}1024\mbox{]} = \{0\}
+\item 
+\hyperlink{classManejoArchivos}{Manejo\+Archivos} $\ast$ \hyperlink{comunicarServer_8h_ab1242e698918704bdb87bcda0fced077}{b}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Se manejan las funciones del cliente. 
+
+\begin{DoxyDate}{Date}
+3/2/2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Carlos Adrian Araya Ramirez 2018319701  Socket de cliente 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{comunicarServer_8h_a614217d263be1fb1a5f76e2ff7be19a2}\label{comunicarServer_8h_a614217d263be1fb1a5f76e2ff7be19a2}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!P\+O\+RT@{P\+O\+RT}}
+\index{P\+O\+RT@{P\+O\+RT}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{P\+O\+RT}{PORT}}
+{\footnotesize\ttfamily \#define P\+O\+RT~8081}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{comunicarServer_8h_a8adf912d43338cc7c0486c2c0a7c7358}\label{comunicarServer_8h_a8adf912d43338cc7c0486c2c0a7c7358}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!actualizar\+Grafo@{actualizar\+Grafo}}
+\index{actualizar\+Grafo@{actualizar\+Grafo}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{actualizar\+Grafo()}{actualizarGrafo()}}
+{\footnotesize\ttfamily string actualizar\+Grafo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Actualiza el grafo del servidor. 
+
+\begin{DoxyReturn}{Returns}
+Devuelve el grafo en modo string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{comunicarServer_8h_adc12bd0358f516e8d7bebae141b9ffed}\label{comunicarServer_8h_adc12bd0358f516e8d7bebae141b9ffed}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!atributos@{atributos}}
+\index{atributos@{atributos}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{atributos()}{atributos()}}
+{\footnotesize\ttfamily void atributos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Define los atributos del socket. 
+
+\mbox{\Hypertarget{comunicarServer_8h_a6dab0da5de3a84c97266e46c6178fbe3}\label{comunicarServer_8h_a6dab0da5de3a84c97266e46c6178fbe3}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!conectar@{conectar}}
+\index{conectar@{conectar}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{conectar()}{conectar()}}
+{\footnotesize\ttfamily void conectar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Se conecta con el servidor. 
+
+\mbox{\Hypertarget{comunicarServer_8h_aee90110fc649a130c7ae44851daa4ef0}\label{comunicarServer_8h_aee90110fc649a130c7ae44851daa4ef0}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!crear\+Socket@{crear\+Socket}}
+\index{crear\+Socket@{crear\+Socket}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{crear\+Socket()}{crearSocket()}}
+{\footnotesize\ttfamily void crear\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Crea el socket del cliente. 
+
+\mbox{\Hypertarget{comunicarServer_8h_a4a8785d4a89047848b73004fea5c4280}\label{comunicarServer_8h_a4a8785d4a89047848b73004fea5c4280}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!enviar@{enviar}}
+\index{enviar@{enviar}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{enviar()}{enviar()}}
+{\footnotesize\ttfamily void enviar (\begin{DoxyParamCaption}\item[{string}]{msg }\end{DoxyParamCaption})}
+
+
+
+Envia un string al servidor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & con mensaje a enviar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{comunicarServer_8h_a04234c1d411ca3758fc16465a7b51798}\label{comunicarServer_8h_a04234c1d411ca3758fc16465a7b51798}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!host\+Name@{host\+Name}}
+\index{host\+Name@{host\+Name}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{host\+Name()}{hostName()}}
+{\footnotesize\ttfamily void host\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Convierte direcciones I\+Pv4 y I\+Pv6 de texto a forma binaria. 
+
+\mbox{\Hypertarget{comunicarServer_8h_aafb94c1ca9ba4be1aab5bf6c5740342d}\label{comunicarServer_8h_aafb94c1ca9ba4be1aab5bf6c5740342d}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!iniciar\+Cliente@{iniciar\+Cliente}}
+\index{iniciar\+Cliente@{iniciar\+Cliente}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{iniciar\+Cliente()}{iniciarCliente()}}
+{\footnotesize\ttfamily void iniciar\+Cliente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inicia el socket del cliente. 
+
+\mbox{\Hypertarget{comunicarServer_8h_a63311a5db4f37e3cd3bd2e665b2364b0}\label{comunicarServer_8h_a63311a5db4f37e3cd3bd2e665b2364b0}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!limpiar\+Buffer@{limpiar\+Buffer}}
+\index{limpiar\+Buffer@{limpiar\+Buffer}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{limpiar\+Buffer()}{limpiarBuffer()}}
+{\footnotesize\ttfamily void limpiar\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Limpia el buffer que se utiliza para comunicarse con el servidor. 
+
+\mbox{\Hypertarget{comunicarServer_8h_aacaa972d336c6451c0b3a6c84752c6f4}\label{comunicarServer_8h_aacaa972d336c6451c0b3a6c84752c6f4}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!obtener\+Dijkstra@{obtener\+Dijkstra}}
+\index{obtener\+Dijkstra@{obtener\+Dijkstra}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{obtener\+Dijkstra()}{obtenerDijkstra()}}
+{\footnotesize\ttfamily string obtener\+Dijkstra (\begin{DoxyParamCaption}\item[{string}]{msg }\end{DoxyParamCaption})}
+
+
+
+Pide al servidor el algoritmo dijkstra de un nodo en especifico pasado por parametro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & que contiene el numero del vertice que se quiere analizar la ruta mas corta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devuelve la ruta mas corta del vertice pasado por parametro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{comunicarServer_8h_a81a569de1d84dcee634334566972c346}\label{comunicarServer_8h_a81a569de1d84dcee634334566972c346}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!recibir@{recibir}}
+\index{recibir@{recibir}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{recibir()}{recibir()}}
+{\footnotesize\ttfamily void recibir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recibe un mensaje del servidor y lo almacena en el buffer. 
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{comunicarServer_8h_ab1242e698918704bdb87bcda0fced077}\label{comunicarServer_8h_ab1242e698918704bdb87bcda0fced077}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!b@{b}}
+\index{b@{b}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily \hyperlink{classManejoArchivos}{Manejo\+Archivos}$\ast$ b}
+
+\mbox{\Hypertarget{comunicarServer_8h_a28d4d3d8445e73a696b2d6f7eadabd96}\label{comunicarServer_8h_a28d4d3d8445e73a696b2d6f7eadabd96}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!buffer@{buffer}}
+\index{buffer@{buffer}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char buffer\mbox{[}1024\mbox{]} = \{0\}}
+
+\mbox{\Hypertarget{comunicarServer_8h_a23861b926acb6da386873c22447b8d89}\label{comunicarServer_8h_a23861b926acb6da386873c22447b8d89}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!hello@{hello}}
+\index{hello@{hello}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{hello}{hello}}
+{\footnotesize\ttfamily char$\ast$ hello = \char`\"{}Hello from client\char`\"{}}
+
+\mbox{\Hypertarget{comunicarServer_8h_ac724fe70ae8af2d1406927ee7b574a1b}\label{comunicarServer_8h_ac724fe70ae8af2d1406927ee7b574a1b}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!serv\+\_\+addr@{serv\+\_\+addr}}
+\index{serv\+\_\+addr@{serv\+\_\+addr}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{serv\+\_\+addr}{serv\_addr}}
+{\footnotesize\ttfamily struct sockaddr\+\_\+in serv\+\_\+addr}
+
+\mbox{\Hypertarget{comunicarServer_8h_a5903d0b282fc5eae503de618f896b5e1}\label{comunicarServer_8h_a5903d0b282fc5eae503de618f896b5e1}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!sock@{sock}}
+\index{sock@{sock}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{sock}{sock}}
+{\footnotesize\ttfamily int sock = 0}
+
+\mbox{\Hypertarget{comunicarServer_8h_add7ecd41088692bcddf064539b23d1e6}\label{comunicarServer_8h_add7ecd41088692bcddf064539b23d1e6}} 
+\index{comunicar\+Server.\+h@{comunicar\+Server.\+h}!valread@{valread}}
+\index{valread@{valread}!comunicar\+Server.\+h@{comunicar\+Server.\+h}}
+\subsubsection{\texorpdfstring{valread}{valread}}
+{\footnotesize\ttfamily int valread}
+
