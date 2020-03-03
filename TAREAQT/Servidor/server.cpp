@@ -1,15 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-// Server side C/C++ program to demonstrate Socket programming
 #include <unistd.h>
-//#include <stdio.h>
 #include <sys/socket.h>
-//#include <stdlib.h>
 #include <netinet/in.h>
 #include "Grafo.h"
 #include <iostream>
@@ -25,6 +15,9 @@ int addrlen = sizeof(address);
 char buffer[1024] = {0};
 char *hello = "Hello from server";
 
+/**
+ * @brief Limpia el buffer utilizado para intercambiar mensajes
+ */
 void limpiarBuffer(){
 
     for(int i = 0; i < 1024; i++){
@@ -34,7 +27,9 @@ void limpiarBuffer(){
     }
 
 }
-
+/**
+ * @brief Crea el socket de servidor
+ */
 void crearSocket(){
 
     // Creating socket file descriptor
@@ -45,10 +40,11 @@ void crearSocket(){
     }
 
 }
-
+/**
+ * @brief Ata el servidor al puerto 8080
+ */
 void attachSocket(){
 
-    // Forcefully attaching socket to the port 8080
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT,
                                                   &opt, sizeof(opt)))
     {
@@ -57,7 +53,9 @@ void attachSocket(){
     }
 
 }
-
+/**
+ * @brief Define los atributos del servidor
+ */
 void attributes(){
 
     address.sin_family = AF_INET;
@@ -65,10 +63,11 @@ void attributes(){
     address.sin_port = htons( PORT );
 
 }
-
+/**
+ * @brief Hace el bind del servidor
+ */
 void socketName(){
 
-    // Forcefully attaching socket to the port 8080
     if (bind(server_fd, (struct sockaddr *)&address,
                                  sizeof(address))<0)
     {
@@ -77,7 +76,9 @@ void socketName(){
     }
 
 }
-
+/**
+ * @brief Pone el servidor a la escucha
+ */
 void listen(){
     \
     if (listen(server_fd, 3) < 0)
@@ -87,7 +88,9 @@ void listen(){
     }
 
 }
-
+/**
+ * @brief Acepta un cliente
+ */
 void accept(){
 
     if ((new_socket = accept(server_fd, (struct sockaddr *)&address,
@@ -98,14 +101,19 @@ void accept(){
     }
 
 }
-
+/**
+ * @brief Recibe mensajes del cliente
+ */
 void recibir(){
 
     valread = read( new_socket , buffer, 1024);
     printf("Recibi: %s\n",buffer );
 
 }
-
+/**
+ * @brief Envia un mensaje al cliente
+ * @param Mensaje a enviar al cliente
+ */
 void enviar(string e){
 
     send(new_socket , e.data() , e.size() , 0 );
@@ -189,23 +197,4 @@ int main(int argc, char const *argv[])
         limpiarBuffer();
 
     }
-
-
-
-
-    /*
-    valread = read( new_socket , buffer, 1024);
-    printf("%s\n",buffer );
-
-    g.crearGrafoString(buffer);
-
-    printf("EL GRAFO RESULTANTE ES\n\n\n");
-    g.imprimirGrafo();
-
-    string enviar = g.dijkstra(3);
-
-    send(new_socket , enviar.data() , enviar.size() , 0 );
-    printf("Dijkstra enviado\n");
-    return 0;
-    */
 }

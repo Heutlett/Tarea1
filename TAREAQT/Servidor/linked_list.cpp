@@ -1,16 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 #include "linked_list.h"
-
+/**
+ * @brief Constructor de la clase
+ */
 linked_list::linked_list()
-    {
-        head = NULL;
-        tail = NULL;
-    }
-
+{
+    head = NULL;
+    tail = NULL;
+}
+/**
+ * @brief Agrega un nodo a la lista
+ */
 void linked_list::add_node()
 {
     node *tmp = new node;
@@ -28,12 +27,17 @@ void linked_list::add_node()
         tail = tail->next;
     }
 }
-
+/**
+ * @brief Devuelve la ultima posicion de la lista
+ * @return Ultimo elemento de la lista
+ */
 node* linked_list:: gethead()
 {
     return head;
 }
-
+/**
+ * @brief Imprime la lista en consola
+ */
 void linked_list:: imprimir()
 {
     node * tmp = head;
@@ -44,9 +48,12 @@ void linked_list:: imprimir()
         tmp = tmp->next;
 
     }
-
 }
-
+/**
+ * @brief Devuelve el vertice con el nombre n
+ * @param Nombre del vertice buscado
+ * @return Vertice buscado
+ */
 Vertice * linked_list::getVertice(int n){
 
     node * tmp = head;
@@ -63,7 +70,10 @@ Vertice * linked_list::getVertice(int n){
     }
 
 }
-
+/**
+ * @brief Devuelve el tamano de la lista
+ * @return Tamano de la lista
+ */
 int linked_list::getSize(){
 
     node * tmp = head;
@@ -77,6 +87,5 @@ int linked_list::getSize(){
     }
 
     return n;
-
 }
 

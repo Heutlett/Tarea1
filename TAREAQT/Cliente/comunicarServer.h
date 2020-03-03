@@ -1,4 +1,3 @@
-
 #ifndef COMUNICARSERVER_H
 #define COMUNICARSERVER_H
 
@@ -23,8 +22,14 @@ char *hello = "Hello from client";
 char buffer[1024] = {0};
 ManejoArchivos * b;
 
+/**
+ * @brief
+ *
+ */
 void iniciarCliente();
-
+/**
+ * @brief Limpia el buffer que se utiliza para comunicarse con el servidor
+ */
 void limpiarBuffer(){
 
     for(int i = 0; i < 1024; i++){
@@ -34,21 +39,29 @@ void limpiarBuffer(){
     }
 
 }
-
+/**
+ * @brief Recibe un mensaje del servidor y lo almacena en el buffer
+ */
 void recibir(){
 
     valread = read( sock , buffer, 1024);
     printf("Recibido: %s\n",buffer );
 
 }
-
+/**
+ * @brief Envia un string al servidor
+ * @param string con mensaje a enviar
+ */
 void enviar(string msg){
 
     send(sock , msg.data() , msg.size() , 0 );
     printf("Enviado: %s\n",msg.c_str());
 
 }
-
+/**
+ * @brief Actualiza el grafo del servidor
+ * @return Devuelve el grafo en modo string
+ */
 string actualizarGrafo(){
 
     limpiarBuffer();
@@ -58,13 +71,16 @@ string actualizarGrafo(){
     recibir();
     string mensaje = b->abrirGrafoTXT("texto.txt");
     enviar(mensaje);
-    //send(sock , mensaje.data() , mensaje.size() , 0 );
     recibir();
     close(sock);
     return buffer;
 
 }
-
+/**
+ * @brief Pide al servidor el algoritmo dijkstra de un nodo en especifico pasado por parametro
+ * @param string que contiene el numero del vertice que se quiere analizar la ruta mas corta
+ * @return Devuelve la ruta mas corta del vertice pasado por parametro
+ */
 string obtenerDijkstra(string msg){
 
     limpiarBuffer();
@@ -81,14 +97,13 @@ string obtenerDijkstra(string msg){
     enviar(msg); //5
 
     recibir();//6
-    //printf("%s\n",buffer );
     close(sock);
     return buffer;
 
 }
-
-
-
+/**
+ * @brief Crea el socket del cliente
+ */
 void crearSocket(){
 
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
@@ -97,14 +112,18 @@ void crearSocket(){
     }
 
 }
-
+/**
+ * @brief Define los atributos del socket
+ */
 void atributos(){
 
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(PORT);
 
 }
-
+/**
+ * @brief Convierte direcciones IPv4 y IPv6 de texto a forma binaria
+ */
 void hostName(){
 
     // Convert IPv4 and IPv6 addresses from text to binary form
@@ -114,7 +133,9 @@ void hostName(){
     }
 
 }
-
+/**
+ * @brief Se conecta con el servidor
+ */
 void conectar(){
 
     if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
@@ -123,28 +144,15 @@ void conectar(){
     }
 
 }
-
+/**
+ * @brief Inicia el socket del cliente
+ */
 void iniciarCliente()
 {
-
-    //actualizarGrafo();
-
     crearSocket();
     atributos();
     hostName();
     conectar();
-
-    //actualizarGrafo();
-
-    /*
-    printf("Hello message sent\n");
-    valread = read( sock , buffer, 1024);
-    printf("%s\n",buffer );
-    return buffer;
-    */
 }
-
-
-
 
 #endif // COMUNICARSERVER_H

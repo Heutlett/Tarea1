@@ -52,11 +52,9 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Cliente/client.cpp \
-		../Cliente/main.cpp \
+SOURCES       = ../Cliente/main.cpp \
 		../Cliente/mainwindow.cpp moc_mainwindow.cpp
-OBJECTS       = client.o \
-		main.o \
+OBJECTS       = main.o \
 		mainwindow.o \
 		moc_mainwindow.o
 DIST          = ../../../Qt/5.14.1/gcc_64/mkspecs/features/spec_pre.prf \
@@ -238,8 +236,7 @@ DIST          = ../../../Qt/5.14.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.14.1/gcc_64/mkspecs/features/lex.prf \
 		../Cliente/Cliente.pro ../Cliente/ManejoArchivos.h \
 		../Cliente/comunicarServer.h \
-		../Cliente/mainwindow.h ../Cliente/client.cpp \
-		../Cliente/main.cpp \
+		../Cliente/mainwindow.h ../Cliente/main.cpp \
 		../Cliente/mainwindow.cpp
 QMAKE_TARGET  = Cliente
 DESTDIR       = 
@@ -625,7 +622,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.14.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Cliente/ManejoArchivos.h ../Cliente/comunicarServer.h ../Cliente/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Cliente/client.cpp ../Cliente/main.cpp ../Cliente/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Cliente/main.cpp ../Cliente/mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Cliente/mainwindow.ui $(DISTDIR)/
 
 
@@ -793,9 +790,6 @@ compiler_lex_clean:
 compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
-
-client.o: ../Cliente/client.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o client.o ../Cliente/client.cpp
 
 main.o: ../Cliente/main.cpp ../Cliente/mainwindow.h \
 		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QMainWindow \
@@ -1023,6 +1017,64 @@ mainwindow.o: ../Cliente/mainwindow.cpp ../Cliente/mainwindow.h \
 		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/5.14.1/gcc_64/include/QtGui/qicon.h \
 		ui_mainwindow.h \
+		../../../Qt/5.14.1/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QAction \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.14.1/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.14.1/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.14.1/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/5.14.1/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/5.14.1/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QLineEdit \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qtextcursor.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qtextformat.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QMenu \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qmenu.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QMenuBar \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QPlainTextEdit \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qplaintextedit.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qtextedit.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qtextdocument.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qtextlayout.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qglyphrun.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qrawfont.h \
+		../../../Qt/5.14.1/gcc_64/include/QtGui/qfontdatabase.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QStatusBar \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QTableWidget \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qtablewidget.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/qtableview.h \
+		../../../Qt/5.14.1/gcc_64/include/QtWidgets/QWidget \
 		../Cliente/comunicarServer.h \
 		../Cliente/ManejoArchivos.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Cliente/mainwindow.cpp

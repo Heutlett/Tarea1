@@ -26,21 +26,30 @@
 
 QT_BEGIN_NAMESPACE
 
+/**
+ * @brief
+ *
+ */
 class Ui_MainWindow
 {
 public:
-    QWidget *centralwidget;
-    QPushButton *pushButton;
-    QLabel *label;
-    QPlainTextEdit *plainTextEdit;
-    QLabel *label_2;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton_2;
-    QTableWidget *tableWidget;
-    QMenuBar *menubar;
-    QMenu *menuInterfaz_del_grafo;
-    QStatusBar *statusbar;
+    QWidget *centralwidget; /**< TODO: describe */
+    QPushButton *pushButton; /**< TODO: describe */
+    QLabel *label; /**< TODO: describe */
+    QPlainTextEdit *plainTextEdit; /**< TODO: describe */
+    QLabel *label_2; /**< TODO: describe */
+    QLineEdit *lineEdit; /**< TODO: describe */
+    QPushButton *pushButton_2; /**< TODO: describe */
+    QTableWidget *tableWidget; /**< TODO: describe */
+    QMenuBar *menubar; /**< TODO: describe */
+    QMenu *menuInterfaz_del_grafo; /**< TODO: describe */
+    QStatusBar *statusbar; /**< TODO: describe */
 
+    /**
+     * @brief
+     *
+     * @param MainWindow
+     */
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
@@ -88,6 +97,11 @@ public:
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
+    /**
+     * @brief
+     *
+     * @param MainWindow
+     */
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Grafos en c++", nullptr));
@@ -101,6 +115,10 @@ public:
 };
 
 namespace Ui {
+    /**
+     * @brief
+     *
+     */
     class MainWindow: public Ui_MainWindow {};
 } // namespace Ui
 

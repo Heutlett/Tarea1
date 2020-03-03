@@ -21,10 +21,23 @@
 
 using namespace std;
 
+/**
+ * @brief
+ *
+ */
 class ManejoArchivos {
 public:
+    /**
+     * @brief
+     *
+     */
     ManejoArchivos();
 
+    /**
+     * @brief Abre el archivo donde se almacena el grafo y lo convierte en un string
+     * @param Nombre del archivo
+     * @return String con el grafo en formato string
+     */
     string abrirGrafoTXT(string txt){
 
     fstream archivo;

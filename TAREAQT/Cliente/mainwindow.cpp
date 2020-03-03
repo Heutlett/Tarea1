@@ -12,9 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    //iniciarCliente();
-
 }
 
 MainWindow::~MainWindow()
@@ -22,21 +19,22 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+/**
+ * @brief Muestra el resultado del algoritmo dijkstra en un campo de texto
+ */
 void MainWindow::on_pushButton_clicked()
 {
-
-    //iniciarCliente();
 
     string msg = obtenerDijkstra(ui->lineEdit->text().toStdString());
 
     ui->plainTextEdit->clear();
-
     ui->plainTextEdit->appendPlainText(msg.c_str());
 
 }
 
-//Actualizar grafo
+/**
+ * @brief Actualiza el grafo en la tabla de la interfaz grafica
+ */
 void MainWindow::on_pushButton_2_clicked()
 {
     string grafo = actualizarGrafo();

@@ -1,26 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * File:   Grafo.cpp
- * Author: heutlett
- *
- * Created on February 29, 2020, 10:04 PM
- */
-
 #include "Grafo.h"
 
 #define INFINITY 9999
 #define max 5
 
+/**
+ * @brief Constructor del grafo
+ */
 Grafo::Grafo() {
 
 
 }
-
+/**
+ * @brief Devuelve un string con los datos del grafo
+ * @return String con datos de grafo
+ */
 string Grafo::imprimirGrafo(){
 
     node * tmp = vertices.gethead();
@@ -29,20 +22,14 @@ string Grafo::imprimirGrafo(){
     while(tmp != NULL){
 
         resultado += tmp->data->imprimirAristas() + "\n";
-        //tmp->data->imprimirAristas();
         tmp = tmp->next;
 
     }
-
     return resultado;
-
 }
-
-void Grafo::agregarVerticeSolo(){
-
-    vertices.add_node();
-}
-
+/**
+ * @brief Agrega un vertice al grafo
+ */
 void Grafo::agregarVertice(){
 
     vertices.add_node();
@@ -58,7 +45,12 @@ void Grafo::agregarVertice(){
 
     }
 }
-
+/**
+ * @brief Agrega una arista al grafo
+ * @param Numero del vertice inicial
+ * @param Numero del vertice final
+ * @param Peso de la arista
+ */
 void Grafo::agregarArista(int verticeIni, int verticeFin, int peso){
 
     Vertice * tmp = this->vertices.getVertice(verticeIni);
@@ -66,7 +58,11 @@ void Grafo::agregarArista(int verticeIni, int verticeFin, int peso){
     tmp->aristas.at(verticeFin) = peso;
 
 }
-
+/**
+ * @brief Calcula la ruta mas corta del vertice pasado por parametro y lo devuelve en un string
+ * @param Numero del vertice de inicio
+ * @return String con la ruta mas corta
+ */
 string Grafo::dijkstra(int inicio){
 
    int cost[max][max],distance[max],pred[max];
@@ -122,44 +118,36 @@ string Grafo::dijkstra(int inicio){
    return resultado;
 
 }
-
+/**
+ * @brief Importa un grafo a partir de un string
+ * @param String que contiene el grafo en modo texto
+ */
 void Grafo::crearGrafoString(string texto2){
 
-
     //Agregando vertices
-
     int mayor = 0;
+    int vini = -1, vfin = -1, peso;
+    string texto3 = "";
 
     for(int i = 0; i < texto2.length()-1; i++){
 
         if(texto2.at(i) == 'v'){
-
             if(texto2.at(i+1)-'0' > mayor){
                 mayor  = texto2.at(i+1)-'0';
             }
-
         }
-
     }
 
     for(int i = 0; i <= mayor; i++){
-
         agregarVertice();
-
     }
 
     //Agregando aristas
 
-    int vini = -1, vfin = -1, peso;
-    string texto3 = "";
-
-
     for(int i = 0; i < texto2.length()-1; i++){
 
         if(texto2.at(i) != '\n'){
-
             texto3 += texto2.at(i);
-
         }else{
 
             if(texto3.length() > 5){
@@ -167,20 +155,10 @@ void Grafo::crearGrafoString(string texto2){
                 vini = texto3.at(1)-'0';
                 vfin = texto3.at(5)-'0';
                 peso = texto3.at(9)-'0';
-
                 agregarArista(vini,vfin,peso);
-
                 texto3 = "";
-
             }
         }
     }
-
-
-    cout << endl;
-
     imprimirGrafo();
-
-
-
 }

@@ -32,8 +32,6 @@ public:
 
     void agregarVertice();
 
-    void agregarVerticeSolo();
-
     void agregarArista(int, int, int);
 
     string imprimirGrafo();
